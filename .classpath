@@ -110,11 +110,7 @@
 	<classpathentry kind="lib" path="local/org.easytesting/fest-util/1.1.6/jars/fest-util.jar"/>
 	<classpathentry kind="lib" path="local/com.novocode/junit-interface/0.10/jars/junit-interface.jar"/>
 	<classpathentry kind="lib" path="local/ch.qos.logback/logback-classic/1.0.13/jars/logback-classic.jar"/>
-	<classpathentry kind="lib" path="local/ch.qos.logback/logback-classic/1.0.13/jars/logback-classic.jar.md5"/>
-	<classpathentry kind="lib" path="local/ch.qos.logback/logback-classic/1.0.13/jars/logback-classic.jar.sha1"/>
 	<classpathentry kind="lib" path="local/ch.qos.logback/logback-core/1.0.13/jars/logback-core.jar"/>
-	<classpathentry kind="lib" path="local/ch.qos.logback/logback-core/1.0.13/jars/logback-core.jar.md5"/>
-	<classpathentry kind="lib" path="local/ch.qos.logback/logback-core/1.0.13/jars/logback-core.jar.sha1"/>
 	<classpathentry kind="lib" path="local/com.typesafe.netty/netty-http-pipelining/1.1.2/jars/netty-http-pipelining.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
