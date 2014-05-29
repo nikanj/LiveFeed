@@ -17,13 +17,13 @@ public class Application extends Controller {
 		java.sql.Connection conn = DB.getConnection();
 		java.sql.Statement stmt = conn.createStatement();
 		String sql;
-		sql = "SELECT ID, ProfName, Password FROM login";
+		sql = "SELECT ID_prof, ProfName, Password FROM login";
 		ResultSet rs = stmt.executeQuery(sql);
 
 		// STEP 5: Extract data from result set
 		while (rs.next()) {
 			// Retrieve by column name
-			int id = rs.getInt("ID");
+			int id = rs.getInt("ID_prof");
 			String name = rs.getString("ProfName");
 			String password = rs.getString("Password");
 
