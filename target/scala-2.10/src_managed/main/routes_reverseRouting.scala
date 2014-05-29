@@ -1,6 +1,6 @@
-// @SOURCE:D:/Master's Germany/Sem 4 subs/SEBA/Play app's/LiveFeed/conf/routes
-// @HASH:9c24f09449355737d0bfbe9ca53280febbd777c7
-// @DATE:Wed May 21 20:11:50 CEST 2014
+// @SOURCE:/Users/roshinisachithanandan/git/LiveFeed/conf/routes
+// @HASH:9847ddb87c5a7fc65ec79756b56ef1b09cdffdf3
+// @DATE:Thu May 29 19:52:29 CEST 2014
 
 import Routes.{prefix => _prefix, defaultPrefix => _defaultPrefix}
 import play.core._
@@ -13,15 +13,15 @@ import play.libs.F
 import Router.queryString
 
 
-// @LINE:9
+// @LINE:13
 // @LINE:6
 package controllers {
 
-// @LINE:9
+// @LINE:13
 class ReverseAssets {
     
 
-// @LINE:9
+// @LINE:13
 def at(file:String): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[PathBindable[String]].unbind("file", file))
 }
@@ -46,15 +46,15 @@ def index(): Call = {
                   
 
 
-// @LINE:9
+// @LINE:13
 // @LINE:6
 package controllers.javascript {
 
-// @LINE:9
+// @LINE:13
 class ReverseAssets {
     
 
-// @LINE:9
+// @LINE:13
 def at : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Assets.at",
    """
@@ -89,16 +89,16 @@ def index : JavascriptReverseRoute = JavascriptReverseRoute(
         
 
 
-// @LINE:9
+// @LINE:13
 // @LINE:6
 package controllers.ref {
 
 
-// @LINE:9
+// @LINE:13
 class ReverseAssets {
     
 
-// @LINE:9
+// @LINE:13
 def at(path:String, file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Assets.at(path, file), HandlerDef(this, "controllers.Assets", "at", Seq(classOf[String], classOf[String]), "GET", """ Map static resources from the /public folder to the /assets URL path""", _prefix + """assets/$file<.+>""")
 )

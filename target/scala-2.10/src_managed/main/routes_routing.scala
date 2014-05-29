@@ -1,6 +1,6 @@
-// @SOURCE:D:/Master's Germany/Sem 4 subs/SEBA/Play app's/LiveFeed/conf/routes
-// @HASH:9c24f09449355737d0bfbe9ca53280febbd777c7
-// @DATE:Wed May 21 20:11:50 CEST 2014
+// @SOURCE:/Users/roshinisachithanandan/git/LiveFeed/conf/routes
+// @HASH:9847ddb87c5a7fc65ec79756b56ef1b09cdffdf3
+// @DATE:Thu May 29 19:52:29 CEST 2014
 
 
 import play.core._
@@ -32,7 +32,7 @@ lazy val defaultPrefix = { if(Routes.prefix.endsWith("/")) "" else "/" }
 private[this] lazy val controllers_Application_index0 = Route("GET", PathPattern(List(StaticPart(Routes.prefix))))
         
 
-// @LINE:9
+// @LINE:13
 private[this] lazy val controllers_Assets_at1 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("assets/"),DynamicPart("file", """.+""",false))))
         
 def documentation = List(("""GET""", prefix,"""controllers.Application.index()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""","""controllers.Assets.at(path:String = "/public", file:String)""")).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
@@ -51,7 +51,7 @@ case controllers_Application_index0(params) => {
 }
         
 
-// @LINE:9
+// @LINE:13
 case controllers_Assets_at1(params) => {
    call(Param[String]("path", Right("/public")), params.fromPath[String]("file", None)) { (path, file) =>
         invokeHandler(controllers.Assets.at(path, file), HandlerDef(this, "controllers.Assets", "at", Seq(classOf[String], classOf[String]),"GET", """ Map static resources from the /public folder to the /assets URL path""", Routes.prefix + """assets/$file<.+>"""))

@@ -5,5 +5,9 @@
 # Home page
 GET     /                           controllers.Application.index()
 
+#Main Pages
+#GET		/home						controllers.Application.index()
+#GET		/ProfSignin					controllers.Application.ProfSignin()
+
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

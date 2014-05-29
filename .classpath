@@ -111,10 +111,10 @@
 	<classpathentry kind="lib" path="local/ch.qos.logback/logback-classic/1.0.13/jars/logback-classic.jar"/>
 	<classpathentry kind="lib" path="local/ch.qos.logback/logback-core/1.0.13/jars/logback-core.jar"/>
 	<classpathentry kind="lib" path="local/com.typesafe.netty/netty-http-pipelining/1.1.2/jars/netty-http-pipelining.jar"/>
-	<classpathentry kind="lib" path="target/scala-2.10/classes_managed"/>
 	<classpathentry kind="lib" path="local/com.typesafe.play/play-java-jpa_2.10/2.2.3/jars/play-java-jpa_2.10.jar"/>
 	<classpathentry kind="lib" path="cache/org.hibernate/hibernate-core/jars/hibernate-core-3.6.9.Final.jar"/>
 	<classpathentry kind="lib" path="cache/org.hibernate/hibernate-entitymanager/jars/hibernate-entitymanager-3.6.9.Final.jar"/>
 	<classpathentry kind="lib" path="cache/org.hibernate/hibernate-commons-annotations/jars/hibernate-commons-annotations-3.2.0.Final.jar"/>
+	<classpathentry kind="lib" path="target/scala-2.10"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
