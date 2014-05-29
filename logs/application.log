@@ -478,3 +478,459 @@ Application started (Dev)
 2014-05-29 17:49:16,958 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in play-akka.actor.default-dispatcher-4 
 SELECT ID_prof, ProfName, Password FROM login
 
+2014-05-29 20:07:03,307 - [INFO] - from play in play-internal-execution-context-1 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
+
+2014-05-29 20:07:03,322 - [DEBUG] - from com.jolbox.bonecp.BoneCPDataSource in play-internal-execution-context-1 
+JDBC URL = jdbc:h2:mem:play;DB_CLOSE_DELAY=-1, Username = null, partitions = 1, max (per partition) = 30, min (per partition) = 5, idle max age = 10 min, idle test period = 1 min, strategy = DEFAULT
+
+2014-05-29 20:07:03,386 - [WARN] - from com.jolbox.bonecp.BoneCPConfig in play-internal-execution-context-1 
+JDBC username was not set in config!
+
+2014-05-29 20:07:03,387 - [WARN] - from com.jolbox.bonecp.BoneCPConfig in play-internal-execution-context-1 
+JDBC password was not set in config!
+
+2014-05-29 20:07:03,816 - [INFO] - from play in play-internal-execution-context-1 
+database [default] connected at jdbc:h2:mem:play
+
+2014-05-29 20:07:04,063 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in play-internal-execution-context-1 
+select id, hash, apply_script, revert_script, state, last_problem from play_evolutions where state like 'applying_%'
+
+2014-05-29 20:07:04,104 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in play-internal-execution-context-1 
+
+              create table play_evolutions (
+                  id int not null primary key, hash varchar(255) not null,
+                  applied_at timestamp not null,
+                  apply_script text,
+                  revert_script text,
+                  state varchar(255),
+                  last_problem text
+              )
+          
+
+2014-05-29 20:07:04,105 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in play-internal-execution-context-1 
+
+            select id, hash, apply_script, revert_script from play_evolutions order by id
+        
+
+2014-05-29 20:07:04,258 - [ERROR] - from application in New I/O worker #1 
+
+
+! @6icc5045l - Internal server error, for (GET) [/] ->
+
+play.api.db.evolutions.InvalidDatabaseRevision: Database 'default' needs evolution![An SQL script need to be run on your database.]
+	at play.api.db.evolutions.EvolutionsPlugin$$anonfun$onStart$1$$anonfun$apply$1.apply$mcV$sp(Evolutions.scala:486) ~[play-jdbc_2.10.jar:2.2.3]
+	at play.api.db.evolutions.EvolutionsPlugin.withLock(Evolutions.scala:507) ~[play-jdbc_2.10.jar:2.2.3]
+	at play.api.db.evolutions.EvolutionsPlugin$$anonfun$onStart$1.apply(Evolutions.scala:461) ~[play-jdbc_2.10.jar:2.2.3]
+	at play.api.db.evolutions.EvolutionsPlugin$$anonfun$onStart$1.apply(Evolutions.scala:459) ~[play-jdbc_2.10.jar:2.2.3]
+	at scala.collection.immutable.List.foreach(List.scala:318) ~[scala-library.jar:na]
+	at play.api.db.evolutions.EvolutionsPlugin.onStart(Evolutions.scala:459) ~[play-jdbc_2.10.jar:2.2.3]
+	at play.api.Play$$anonfun$start$1$$anonfun$apply$mcV$sp$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.3]
+	at play.api.Play$$anonfun$start$1$$anonfun$apply$mcV$sp$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.3]
+	at scala.collection.immutable.List.foreach(List.scala:318) ~[scala-library.jar:na]
+	at play.api.Play$$anonfun$start$1.apply$mcV$sp(Play.scala:88) ~[play_2.10.jar:2.2.3]
+	at play.api.Play$$anonfun$start$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.3]
+	at play.api.Play$$anonfun$start$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.3]
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:18) ~[play_2.10.jar:2.2.3]
+	at play.api.Play$.start(Play.scala:87) ~[play_2.10.jar:2.2.3]
+	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:139) ~[play_2.10.jar:2.2.3]
+	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:112) ~[play_2.10.jar:2.2.3]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:112) ~[play_2.10.jar:2.2.3]
+	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:110) ~[play_2.10.jar:2.2.3]
+	at scala.util.Success.flatMap(Try.scala:200) ~[scala-library.jar:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:110) ~[play_2.10.jar:2.2.3]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:102) ~[play_2.10.jar:2.2.3]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
+
+2014-05-29 20:07:11,286 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in New I/O worker #1 
+select id, hash, apply_script, revert_script, state, last_problem from play_evolutions where state like 'applying_%'
+
+2014-05-29 20:07:11,289 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in New I/O worker #1 
+
+            select id, hash, apply_script, revert_script from play_evolutions order by id
+        
+
+2014-05-29 20:07:11,290 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in New I/O worker #1 
+select id, hash, apply_script, revert_script, state, last_problem from play_evolutions where state like 'applying_%'
+
+2014-05-29 20:07:11,315 - [DEBUG] - from com.jolbox.bonecp.PreparedStatementHandle in New I/O worker #1 
+insert into play_evolutions values(1, '25f3cddf0cd1a2d287865df39c77d2691fb77b8c', 2014-05-29, '--
+-- Table structure for table `login`
+--
+
+CREATE TABLE login (
+ID_prof 		bigint NOT NULL,
+ProfName		varchar(45),
+Password 		varchar(45),
+constraint pk_login primary key (ID_prof)
+);
+
+
+--
+-- Table structure for table `stats`
+--
+
+CREATE TABLE stats (
+ID_stats 		bigint DEFAULT NULL,
+Speed_slow 		bigint DEFAULT NULL,
+Speed_ok 		bigint DEFAULT NULL,
+Speed_fast 		bigint DEFAULT NULL,
+Pause 		bigint DEFAULT NULL,
+Volume_high 		bigint DEFAULT NULL,
+Volume_ok 		bigint DEFAULT NULL,
+Volume_low 		bigint DEFAULT NULL,
+constraint pk_stats primary key (ID_stats)
+);
+
+--
+-- Table structure for table `course`
+--
+
+CREATE TABLE course (
+ID_prof 			bigint NOT NULL,
+ID_stats 			bigint NOT NULL,
+CourseName 		varchar(200) DEFAULT NULL,
+SessionNumber 	varchar(200) DEFAULT NULL,
+constraint pk_course primary key (CourseName)
+);
+alter table course add constraint fk_course_login foreign key (ID_prof) references login (ID_prof) on delete restrict on update restrict;
+alter table course add constraint fk_course_stats foreign key (ID_stats) references stats (ID_stats) on delete restrict on update restrict;
+create index ix_course_login on course (ID_prof);
+create index ix_course_stats on course (ID_stats);
+--
+-- Table structure for table `question`
+--
+
+CREATE TABLE question (
+ID_prof 			bigint NOT NULL,
+ID_question 		bigint NOT NULL,
+Question 			varchar(45) DEFAULT NULL,
+CourseName 		varchar(200) DEFAULT NULL,
+constraint pk_question primary key (ID_question)
+);
+
+alter table question add constraint fk_question_login foreign key (ID_prof) references login (ID_prof) on delete restrict on update restrict;
+alter table question add constraint fk_question_course foreign key (CourseName) references course (CourseName) on delete restrict on update restrict;
+create index ix_question_login on question (ID_prof);
+create index ix_question_course on question (CourseName);
+
+--
+-- Table structure for table `answer`
+--
+
+CREATE TABLE answer (
+ID_question  bigint NOT NULL,
+Answer	    varchar(45),
+);
+
+alter table answer add constraint fk_answer_question foreign key (ID_question) references question (ID_question) on delete restrict on update restrict;
+create index ix_answer_question on answer (ID_question);
+
+
+
+create sequence login_seq start with 1000;
+create sequence question_seq start with 1000;
+create sequence answer_seq start with 1000;
+create sequence course_seq start with 1000;
+create sequence stats_seq start with 1000;', 'SET REFERENTIAL_INTEGRITY FALSE;
+
+drop table if exists login;
+
+SET REFERENTIAL_INTEGRITY TRUE;
+
+drop sequence if exists login_seq;
+
+SET REFERENTIAL_INTEGRITY FALSE;
+
+drop table if exists question;
+
+SET REFERENTIAL_INTEGRITY TRUE;
+
+drop sequence if exists question_seq;
+
+SET REFERENTIAL_INTEGRITY FALSE;
+
+drop table if exists answer;
+
+SET REFERENTIAL_INTEGRITY TRUE;
+
+drop sequence if exists answer_seq;
+
+SET REFERENTIAL_INTEGRITY FALSE;
+
+drop table if exists course;
+
+SET REFERENTIAL_INTEGRITY TRUE;
+
+drop sequence if exists course_seq;
+
+SET REFERENTIAL_INTEGRITY FALSE;
+
+drop table if exists stats;
+
+SET REFERENTIAL_INTEGRITY TRUE;
+
+drop sequence if exists stats_seq;', 'applying_up', '')
+
+2014-05-29 20:07:11,353 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in New I/O worker #1 
+--
+-- Table structure for table `login`
+--
+
+CREATE TABLE login (
+ID_prof 		bigint NOT NULL,
+ProfName		varchar(45),
+Password 		varchar(45),
+constraint pk_login primary key (ID_prof)
+)
+
+2014-05-29 20:07:11,354 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in New I/O worker #1 
+--
+-- Table structure for table `stats`
+--
+
+CREATE TABLE stats (
+ID_stats 		bigint DEFAULT NULL,
+Speed_slow 		bigint DEFAULT NULL,
+Speed_ok 		bigint DEFAULT NULL,
+Speed_fast 		bigint DEFAULT NULL,
+Pause 		bigint DEFAULT NULL,
+Volume_high 		bigint DEFAULT NULL,
+Volume_ok 		bigint DEFAULT NULL,
+Volume_low 		bigint DEFAULT NULL,
+constraint pk_stats primary key (ID_stats)
+)
+
+2014-05-29 20:07:11,354 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in New I/O worker #1 
+--
+-- Table structure for table `course`
+--
+
+CREATE TABLE course (
+ID_prof 			bigint NOT NULL,
+ID_stats 			bigint NOT NULL,
+CourseName 		varchar(200) DEFAULT NULL,
+SessionNumber 	varchar(200) DEFAULT NULL,
+constraint pk_course primary key (CourseName)
+)
+
+2014-05-29 20:07:11,355 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in New I/O worker #1 
+alter table course add constraint fk_course_login foreign key (ID_prof) references login (ID_prof) on delete restrict on update restrict
+
+2014-05-29 20:07:11,405 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in New I/O worker #1 
+alter table course add constraint fk_course_stats foreign key (ID_stats) references stats (ID_stats) on delete restrict on update restrict
+
+2014-05-29 20:07:11,406 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in New I/O worker #1 
+create index ix_course_login on course (ID_prof)
+
+2014-05-29 20:07:11,407 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in New I/O worker #1 
+create index ix_course_stats on course (ID_stats)
+
+2014-05-29 20:07:11,407 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in New I/O worker #1 
+--
+-- Table structure for table `question`
+--
+
+CREATE TABLE question (
+ID_prof 			bigint NOT NULL,
+ID_question 		bigint NOT NULL,
+Question 			varchar(45) DEFAULT NULL,
+CourseName 		varchar(200) DEFAULT NULL,
+constraint pk_question primary key (ID_question)
+)
+
+2014-05-29 20:07:11,407 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in New I/O worker #1 
+alter table question add constraint fk_question_login foreign key (ID_prof) references login (ID_prof) on delete restrict on update restrict
+
+2014-05-29 20:07:11,409 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in New I/O worker #1 
+alter table question add constraint fk_question_course foreign key (CourseName) references course (CourseName) on delete restrict on update restrict
+
+2014-05-29 20:07:11,411 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in New I/O worker #1 
+create index ix_question_login on question (ID_prof)
+
+2014-05-29 20:07:11,411 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in New I/O worker #1 
+create index ix_question_course on question (CourseName)
+
+2014-05-29 20:07:11,411 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in New I/O worker #1 
+--
+-- Table structure for table `answer`
+--
+
+CREATE TABLE answer (
+ID_question  bigint NOT NULL,
+Answer	    varchar(45),
+)
+
+2014-05-29 20:07:11,411 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in New I/O worker #1 
+alter table answer add constraint fk_answer_question foreign key (ID_question) references question (ID_question) on delete restrict on update restrict
+
+2014-05-29 20:07:11,434 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in New I/O worker #1 
+create index ix_answer_question on answer (ID_question)
+
+2014-05-29 20:07:11,435 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in New I/O worker #1 
+create sequence login_seq start with 1000
+
+2014-05-29 20:07:11,451 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in New I/O worker #1 
+create sequence question_seq start with 1000
+
+2014-05-29 20:07:11,451 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in New I/O worker #1 
+create sequence answer_seq start with 1000
+
+2014-05-29 20:07:11,452 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in New I/O worker #1 
+create sequence course_seq start with 1000
+
+2014-05-29 20:07:11,452 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in New I/O worker #1 
+create sequence stats_seq start with 1000
+
+2014-05-29 20:07:11,452 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in New I/O worker #1 
+update play_evolutions set state = 'applied' where id = 1
+
+2014-05-29 20:07:11,453 - [DEBUG] - from com.jolbox.bonecp.PreparedStatementHandle in New I/O worker #1 
+insert into play_evolutions values(2, 'eb36ca2cf1b3aba0a895dce484af326bbfe063d4', 2014-05-29, 'Insert into login (ID_prof, ProfName, Password) values (1,'bruegge', 'test1');
+Insert into login (ID_prof, ProfName, Password) values (2,'jacobson', 'test2');', 'delete from login;', 'applying_up', '')
+
+2014-05-29 20:07:11,454 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in New I/O worker #1 
+Insert into login (ID_prof, ProfName, Password) values (1,'bruegge', 'test1')
+
+2014-05-29 20:07:11,454 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in New I/O worker #1 
+Insert into login (ID_prof, ProfName, Password) values (2,'jacobson', 'test2')
+
+2014-05-29 20:07:11,454 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in New I/O worker #1 
+update play_evolutions set state = 'applied' where id = 2
+
+2014-05-29 20:07:11,455 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in New I/O worker #1 
+select id, hash, apply_script, revert_script, state, last_problem from play_evolutions where state like 'applying_%'
+
+2014-05-29 20:07:11,927 - [INFO] - from com.jolbox.bonecp.BoneCP in play-internal-execution-context-1 
+Shutting down connection pool...
+
+2014-05-29 20:07:11,928 - [DEBUG] - from com.jolbox.bonecp.PoolWatchThread in BoneCP-pool-watch-thread 
+Terminating pool watch thread
+
+2014-05-29 20:07:12,501 - [INFO] - from com.jolbox.bonecp.BoneCP in play-internal-execution-context-1 
+Connection pool has been shutdown.
+
+2014-05-29 20:07:12,501 - [DEBUG] - from com.jolbox.bonecp.BoneCPDataSource in play-internal-execution-context-1 
+Connection pool has been shut down
+
+2014-05-29 20:07:12,730 - [INFO] - from play in play-internal-execution-context-1 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
+
+2014-05-29 20:07:12,731 - [DEBUG] - from com.jolbox.bonecp.BoneCPDataSource in play-internal-execution-context-1 
+JDBC URL = jdbc:h2:mem:play;DB_CLOSE_DELAY=-1, Username = null, partitions = 1, max (per partition) = 30, min (per partition) = 5, idle max age = 10 min, idle test period = 1 min, strategy = DEFAULT
+
+2014-05-29 20:07:12,731 - [WARN] - from com.jolbox.bonecp.BoneCPConfig in play-internal-execution-context-1 
+JDBC username was not set in config!
+
+2014-05-29 20:07:12,731 - [WARN] - from com.jolbox.bonecp.BoneCPConfig in play-internal-execution-context-1 
+JDBC password was not set in config!
+
+2014-05-29 20:07:12,732 - [INFO] - from play in play-internal-execution-context-1 
+database [default] connected at jdbc:h2:mem:play
+
+2014-05-29 20:07:12,737 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in play-internal-execution-context-1 
+select id, hash, apply_script, revert_script, state, last_problem from play_evolutions where state like 'applying_%'
+
+2014-05-29 20:07:12,738 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in play-internal-execution-context-1 
+
+            select id, hash, apply_script, revert_script from play_evolutions order by id
+        
+
+2014-05-29 20:07:13,917 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
+2014-05-29 20:07:15,572 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in play-akka.actor.default-dispatcher-7 
+SELECT ID_prof, ProfName, Password FROM login
+
+2014-05-29 20:08:50,626 - [INFO] - from com.jolbox.bonecp.BoneCP in play-internal-execution-context-1 
+Shutting down connection pool...
+
+2014-05-29 20:08:50,627 - [DEBUG] - from com.jolbox.bonecp.PoolWatchThread in BoneCP-pool-watch-thread 
+Terminating pool watch thread
+
+2014-05-29 20:08:50,629 - [INFO] - from com.jolbox.bonecp.BoneCP in play-internal-execution-context-1 
+Connection pool has been shutdown.
+
+2014-05-29 20:08:50,629 - [DEBUG] - from com.jolbox.bonecp.BoneCPDataSource in play-internal-execution-context-1 
+Connection pool has been shut down
+
+2014-05-29 20:08:50,698 - [INFO] - from play in play-internal-execution-context-1 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
+
+2014-05-29 20:08:50,699 - [DEBUG] - from com.jolbox.bonecp.BoneCPDataSource in play-internal-execution-context-1 
+JDBC URL = jdbc:h2:mem:play;DB_CLOSE_DELAY=-1, Username = null, partitions = 1, max (per partition) = 30, min (per partition) = 5, idle max age = 10 min, idle test period = 1 min, strategy = DEFAULT
+
+2014-05-29 20:08:50,699 - [WARN] - from com.jolbox.bonecp.BoneCPConfig in play-internal-execution-context-1 
+JDBC username was not set in config!
+
+2014-05-29 20:08:50,699 - [WARN] - from com.jolbox.bonecp.BoneCPConfig in play-internal-execution-context-1 
+JDBC password was not set in config!
+
+2014-05-29 20:08:50,701 - [INFO] - from play in play-internal-execution-context-1 
+database [default] connected at jdbc:h2:mem:play
+
+2014-05-29 20:08:50,730 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in play-internal-execution-context-1 
+select id, hash, apply_script, revert_script, state, last_problem from play_evolutions where state like 'applying_%'
+
+2014-05-29 20:08:50,731 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in play-internal-execution-context-1 
+
+            select id, hash, apply_script, revert_script from play_evolutions order by id
+        
+
+2014-05-29 20:08:50,744 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
+2014-05-29 20:08:50,749 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in play-akka.actor.default-dispatcher-9 
+SELECT ID_prof, ProfName, Password FROM login
+
+2014-05-29 20:08:53,002 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in play-akka.actor.default-dispatcher-9 
+SELECT ID_prof, ProfName, Password FROM login
+
+2014-05-29 20:09:32,805 - [INFO] - from com.jolbox.bonecp.BoneCP in play-internal-execution-context-1 
+Shutting down connection pool...
+
+2014-05-29 20:09:32,805 - [DEBUG] - from com.jolbox.bonecp.PoolWatchThread in BoneCP-pool-watch-thread 
+Terminating pool watch thread
+
+2014-05-29 20:09:32,806 - [INFO] - from com.jolbox.bonecp.BoneCP in play-internal-execution-context-1 
+Connection pool has been shutdown.
+
+2014-05-29 20:09:32,806 - [DEBUG] - from com.jolbox.bonecp.BoneCPDataSource in play-internal-execution-context-1 
+Connection pool has been shut down
+
+2014-05-29 20:09:32,873 - [INFO] - from play in play-internal-execution-context-1 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
+
+2014-05-29 20:09:32,874 - [DEBUG] - from com.jolbox.bonecp.BoneCPDataSource in play-internal-execution-context-1 
+JDBC URL = jdbc:h2:mem:play;DB_CLOSE_DELAY=-1, Username = null, partitions = 1, max (per partition) = 30, min (per partition) = 5, idle max age = 10 min, idle test period = 1 min, strategy = DEFAULT
+
+2014-05-29 20:09:32,874 - [WARN] - from com.jolbox.bonecp.BoneCPConfig in play-internal-execution-context-1 
+JDBC username was not set in config!
+
+2014-05-29 20:09:32,874 - [WARN] - from com.jolbox.bonecp.BoneCPConfig in play-internal-execution-context-1 
+JDBC password was not set in config!
+
+2014-05-29 20:09:32,876 - [INFO] - from play in play-internal-execution-context-1 
+database [default] connected at jdbc:h2:mem:play
+
+2014-05-29 20:09:32,952 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in play-internal-execution-context-1 
+select id, hash, apply_script, revert_script, state, last_problem from play_evolutions where state like 'applying_%'
+
+2014-05-29 20:09:32,952 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in play-internal-execution-context-1 
+
+            select id, hash, apply_script, revert_script from play_evolutions order by id
+        
+
+2014-05-29 20:09:32,959 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
+2014-05-29 20:09:32,964 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in play-akka.actor.default-dispatcher-14 
+SELECT ID_prof, ProfName, Password FROM login
+
