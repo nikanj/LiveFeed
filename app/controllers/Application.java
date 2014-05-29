@@ -36,7 +36,7 @@ public class Application extends Controller {
 		rs.close();
 		stmt.close();
 		conn.close();
-		return ok(index.render("Your new application is ready."));
+		return ok(index.render(""));
 	}
 
 }

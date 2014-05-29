@@ -1,68 +1,23 @@
-2014-05-24 22:33:00,626 - [INFO] - from play in pool-4-thread-2 
+2014-05-29 17:15:55,516 - [INFO] - from play in pool-4-thread-4 
 Listening for HTTP on /0:0:0:0:0:0:0:0:9000
 
-2014-05-24 22:33:18,659 - [INFO] - from play in play-internal-execution-context-1 
-datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
-
-2014-05-24 22:33:18,660 - [DEBUG] - from com.jolbox.bonecp.BoneCPDataSource in play-internal-execution-context-1 
-JDBC URL = jdbc:h2:mem:play;DB_CLOSE_DELAY=-1, Username = null, partitions = 1, max (per partition) = 30, min (per partition) = 5, idle max age = 10 min, idle test period = 1 min, strategy = DEFAULT
-
-2014-05-24 22:33:18,699 - [WARN] - from com.jolbox.bonecp.BoneCPConfig in play-internal-execution-context-1 
-JDBC username was not set in config!
-
-2014-05-24 22:33:18,699 - [WARN] - from com.jolbox.bonecp.BoneCPConfig in play-internal-execution-context-1 
-JDBC password was not set in config!
-
-2014-05-24 22:33:19,162 - [INFO] - from play in play-internal-execution-context-1 
-database [default] connected at jdbc:h2:mem:play
-
-2014-05-24 22:33:19,393 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in play-internal-execution-context-1 
-select id, hash, apply_script, revert_script, state, last_problem from play_evolutions where state like 'applying_%'
-
-2014-05-24 22:33:19,427 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in play-internal-execution-context-1 
-
-              create table play_evolutions (
-                  id int not null primary key, hash varchar(255) not null,
-                  applied_at timestamp not null,
-                  apply_script text,
-                  revert_script text,
-                  state varchar(255),
-                  last_problem text
-              )
-          
-
-2014-05-24 22:33:19,428 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in play-internal-execution-context-1 
-
-            select id, hash, apply_script, revert_script from play_evolutions order by id
-        
-
-2014-05-24 22:33:19,545 - [ERROR] - from application in New I/O worker #1 
+2014-05-29 17:16:07,918 - [ERROR] - from application in New I/O worker #1 
 
 
-! @6ib2emc4f - Internal server error, for (GET) [/] ->
+! @6icb8eg5d - Internal server error, for (GET) [/] ->
 
-play.api.db.evolutions.InvalidDatabaseRevision: Database 'default' needs evolution![An SQL script need to be run on your database.]
-	at play.api.db.evolutions.EvolutionsPlugin$$anonfun$onStart$1$$anonfun$apply$1.apply$mcV$sp(Evolutions.scala:486) ~[play-jdbc_2.10.jar:2.2.3]
-	at play.api.db.evolutions.EvolutionsPlugin.withLock(Evolutions.scala:507) ~[play-jdbc_2.10.jar:2.2.3]
-	at play.api.db.evolutions.EvolutionsPlugin$$anonfun$onStart$1.apply(Evolutions.scala:461) ~[play-jdbc_2.10.jar:2.2.3]
-	at play.api.db.evolutions.EvolutionsPlugin$$anonfun$onStart$1.apply(Evolutions.scala:459) ~[play-jdbc_2.10.jar:2.2.3]
-	at scala.collection.immutable.List.foreach(List.scala:318) ~[scala-library.jar:na]
-	at play.api.db.evolutions.EvolutionsPlugin.onStart(Evolutions.scala:459) ~[play-jdbc_2.10.jar:2.2.3]
-	at play.api.Play$$anonfun$start$1$$anonfun$apply$mcV$sp$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.3]
-	at play.api.Play$$anonfun$start$1$$anonfun$apply$mcV$sp$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.3]
-	at scala.collection.immutable.List.foreach(List.scala:318) ~[scala-library.jar:na]
-	at play.api.Play$$anonfun$start$1.apply$mcV$sp(Play.scala:88) ~[play_2.10.jar:2.2.3]
-	at play.api.Play$$anonfun$start$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.3]
-	at play.api.Play$$anonfun$start$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.3]
-	at play.utils.Threads$.withContextClassLoader(Threads.scala:18) ~[play_2.10.jar:2.2.3]
-	at play.api.Play$.start(Play.scala:87) ~[play_2.10.jar:2.2.3]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:139) ~[play_2.10.jar:2.2.3]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:112) ~[play_2.10.jar:2.2.3]
+play.PlayExceptions$CompilationException: Compilation error[type Login is not a member of object controllers.Application]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
 	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:112) ~[play_2.10.jar:2.2.3]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:110) ~[play_2.10.jar:2.2.3]
-	at scala.util.Success.flatMap(Try.scala:200) ~[scala-library.jar:na]
-	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:110) ~[play_2.10.jar:2.2.3]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:298) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:298) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:296) ~[na:na]
+	at scala.util.Either$LeftProjection.map(Either.scala:377) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1.reload(PlayReloader.scala:296) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:104) ~[play_2.10.jar:2.2.3]
 	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:102) ~[play_2.10.jar:2.2.3]
 	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
 	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
@@ -72,326 +27,32 @@ play.api.db.evolutions.InvalidDatabaseRevision: Database 'default' needs evoluti
 	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
 	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
 
-2014-05-24 22:33:27,268 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in New I/O worker #1 
-select id, hash, apply_script, revert_script, state, last_problem from play_evolutions where state like 'applying_%'
-
-2014-05-24 22:33:27,270 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in New I/O worker #1 
-
-            select id, hash, apply_script, revert_script from play_evolutions order by id
-        
-
-2014-05-24 22:33:27,271 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in New I/O worker #1 
-select id, hash, apply_script, revert_script, state, last_problem from play_evolutions where state like 'applying_%'
-
-2014-05-24 22:33:27,304 - [DEBUG] - from com.jolbox.bonecp.PreparedStatementHandle in New I/O worker #1 
-insert into play_evolutions values(1, '45138dba908895a0599cd4f408df9ac1503c8aa4', 2014-05-24, 'DROP TABLE IF EXISTS login;
-
-CREATE TABLE login (
-ID 			bigint NOT NULL,
-ProfName		varchar(45),
-Password 		varchar(45),
-constraint pk_login primary key (ID))
-;
-
-DROP TABLE IF EXISTS answer;
-
-CREATE TABLE answer (
-ID 			bigint DEFAULT NULL,
-Answer	    varchar(45),
-KEY ID_answer_idx (ID),
-CONSTRAINT ID_answer FOREIGN KEY (ID) REFERENCES question (ID_answer) ON DELETE NO ACTION ON UPDATE NO ACTION
-);
-
-
---
--- Dumping data for table `answer`
---
-
-LOCK TABLES answer WRITE;
-
-UNLOCK TABLES;
-
---
--- Table structure for table `course`
---
-
-DROP TABLE IF EXISTS course;
-
-CREATE TABLE course (
-ID_stats 			bigint NOT NULL,
-CourseName 		varchar(200) DEFAULT NULL,
-ID_login 			bigint DEFAULT NULL,
-SessionNumber 	varchar(200) DEFAULT NULL,
-PRIMARY KEY (ID_stats),
-UNIQUE KEY ID_UNIQUE (ID_stats),
-KEY ID_idx (ID_login),
-CONSTRAINT ID FOREIGN KEY (ID_login) REFERENCES login (ID) ON DELETE NO ACTION ON UPDATE NO ACTION
-);
-
-
---
--- Dumping data for table `course`
---
-
-LOCK TABLES course WRITE;
-
-UNLOCK TABLES;
-
---
--- Table structure for table `login`
---
-
-
-
---
--- Dumping data for table `login`
---
-
-LOCK TABLES login WRITE;
-
-UNLOCK TABLES;
-
---
--- Table structure for table `question`
---
-
-DROP TABLE IF EXISTS question;
-
-CREATE TABLE question (
-ID_answer 		bigint NOT NULL,
-Question 			varchar(45) DEFAULT NULL,
-PRIMARY KEY (ID_answer),
-UNIQUE KEY ID_UNIQUE (ID_answer)
-);
-
-
---
--- Dumping data for table `question`
---
-
-LOCK TABLES question WRITE;
-
-UNLOCK TABLES;
-
---
--- Table structure for table `stats`
---
-
-DROP TABLE IF EXISTS stats;
-
-CREATE TABLE stats (
-ID 		bigint DEFAULT NULL,
-Slow 		varchar(45) DEFAULT NULL,
-OK 		varchar(45) DEFAULT NULL,
-Fast 		varchar(45) DEFAULT NULL,
-KEY 		ID_stats_idx (ID),
-CONSTRAINT ID_stats FOREIGN KEY (ID) REFERENCES course (ID_stats) ON DELETE NO ACTION ON UPDATE NO ACTION
-);
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `stats`
---
-
-LOCK TABLES `stats` WRITE;
-/*!40000 ALTER TABLE `stats` DISABLE KEYS */;
-/*!40000 ALTER TABLE `stats` ENABLE KEYS */;
-UNLOCK TABLES;
-
-
-
-
-
-create sequence login_seq start with 1000;', 'SET REFERENTIAL_INTEGRITY FALSE;
-
-drop table if exists login;
-
-SET REFERENTIAL_INTEGRITY TRUE;
-
-drop sequence if exists login_seq;', 'applying_up', '')
-
-2014-05-24 22:33:27,366 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in New I/O worker #1 
-DROP TABLE IF EXISTS login
-
-2014-05-24 22:33:27,366 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in New I/O worker #1 
-CREATE TABLE login (
-ID 			bigint NOT NULL,
-ProfName		varchar(45),
-Password 		varchar(45),
-constraint pk_login primary key (ID))
-
-2014-05-24 22:33:27,367 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in New I/O worker #1 
-DROP TABLE IF EXISTS answer
-
-2014-05-24 22:33:27,367 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in New I/O worker #1 
-CREATE TABLE answer (
-ID 			bigint DEFAULT NULL,
-Answer	    varchar(45),
-KEY ID_answer_idx (ID),
-CONSTRAINT ID_answer FOREIGN KEY (ID) REFERENCES question (ID_answer) ON DELETE NO ACTION ON UPDATE NO ACTION
-)
-
-2014-05-24 22:33:27,368 - [DEBUG] - from com.jolbox.bonecp.PreparedStatementHandle in New I/O worker #1 
-update play_evolutions set last_problem = 'Unknown data type: "ID_ANSWER_IDX"; SQL statement:
-CREATE TABLE answer (
-ID 			bigint DEFAULT NULL,
-Answer	    varchar(45),
-KEY ID_answer_idx (ID),
-CONSTRAINT ID_answer FOREIGN KEY (ID) REFERENCES question (ID_answer) ON DELETE NO ACTION ON UPDATE NO ACTION
-) [50004-172] [ERROR:50004, SQLSTATE:HY004]' where id = 1
-
-2014-05-24 22:33:27,370 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in New I/O worker #1 
-select id, hash, apply_script, revert_script, state, last_problem from play_evolutions where state like 'applying_%'
-
-2014-05-24 22:33:27,371 - [ERROR] - from play in New I/O worker #1 
-Unknown data type: "ID_ANSWER_IDX"; SQL statement:
-CREATE TABLE answer (
-ID 			bigint DEFAULT NULL,
-Answer	    varchar(45),
-KEY ID_answer_idx (ID),
-CONSTRAINT ID_answer FOREIGN KEY (ID) REFERENCES question (ID_answer) ON DELETE NO ACTION ON UPDATE NO ACTION
-) [50004-172] [ERROR:50004, SQLSTATE:HY004]
-
-2014-05-24 22:33:27,394 - [ERROR] - from application in New I/O worker #1 
-
-
-! @6ib2emnm4 - Internal server error, for (GET) [/@evolutions/apply/default?redirect=http%3A%2F%2Flocalhost%3A9000%2F] ->
-
-play.api.db.evolutions.InconsistentDatabase: Database 'default' is in an inconsistent state![An evolution has not been applied properly. Please check the problem and resolve it manually before marking it as resolved.]
-	at play.api.db.evolutions.Evolutions$.checkEvolutionsState(Evolutions.scala:193) ~[play-jdbc_2.10.jar:2.2.3]
-	at play.api.db.evolutions.Evolutions$.applyScript(Evolutions.scala:277) ~[play-jdbc_2.10.jar:2.2.3]
-	at play.api.db.evolutions.EvolutionsPlugin.handleWebCommand(Evolutions.scala:560) ~[play-jdbc_2.10.jar:2.2.3]
-	at play.core.ReloadableApplication$$anonfun$handleWebCommand$1$$anonfun$apply$5$$anonfun$apply$6.apply(ApplicationProvider.scala:175) ~[play_2.10.jar:2.2.3]
-	at play.core.ReloadableApplication$$anonfun$handleWebCommand$1$$anonfun$apply$5$$anonfun$apply$6.apply(ApplicationProvider.scala:174) ~[play_2.10.jar:2.2.3]
-	at scala.collection.LinearSeqOptimized$class.foldLeft(LinearSeqOptimized.scala:111) ~[scala-library.jar:na]
-	at scala.collection.immutable.List.foldLeft(List.scala:84) ~[scala-library.jar:na]
-	at play.core.ReloadableApplication$$anonfun$handleWebCommand$1$$anonfun$apply$5.apply(ApplicationProvider.scala:174) ~[play_2.10.jar:2.2.3]
-	at play.core.ReloadableApplication$$anonfun$handleWebCommand$1$$anonfun$apply$5.apply(ApplicationProvider.scala:173) ~[play_2.10.jar:2.2.3]
-	at scala.Option.flatMap(Option.scala:170) ~[scala-library.jar:na]
-	at play.core.ReloadableApplication$$anonfun$handleWebCommand$1.apply(ApplicationProvider.scala:173) ~[play_2.10.jar:2.2.3]
-	at play.core.ReloadableApplication$$anonfun$handleWebCommand$1.apply(ApplicationProvider.scala:173) ~[play_2.10.jar:2.2.3]
-	at scala.Option.orElse(Option.scala:257) ~[scala-library.jar:na]
-	at play.core.ReloadableApplication.handleWebCommand(ApplicationProvider.scala:171) ~[play_2.10.jar:2.2.3]
-	at play.core.server.Server$$anonfun$getHandlerFor$1.apply(Server.scala:79) ~[play_2.10.jar:2.2.3]
-	at play.core.server.Server$$anonfun$getHandlerFor$1.apply(Server.scala:79) ~[play_2.10.jar:2.2.3]
-	at scala.util.control.Exception$Catch$$anonfun$either$1.apply(Exception.scala:124) ~[scala-library.jar:na]
-	at scala.util.control.Exception$Catch$$anonfun$either$1.apply(Exception.scala:124) ~[scala-library.jar:na]
-	at scala.util.control.Exception$Catch.apply(Exception.scala:102) ~[scala-library.jar:na]
-	at scala.util.control.Exception$Catch.either(Exception.scala:124) ~[scala-library.jar:na]
-	at play.core.server.Server$class.getHandlerFor(Server.scala:79) ~[play_2.10.jar:2.2.3]
-	at play.core.server.NettyServer.getHandlerFor(NettyServer.scala:35) [play_2.10.jar:2.2.3]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$9.apply(PlayDefaultUpstreamHandler.scala:118) [play_2.10.jar:2.2.3]
-	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$9.apply(PlayDefaultUpstreamHandler.scala:118) [play_2.10.jar:2.2.3]
-	at scala.util.Either.fold(Either.scala:98) [scala-library.jar:na]
-	at play.core.server.netty.PlayDefaultUpstreamHandler.messageReceived(PlayDefaultUpstreamHandler.scala:112) [play_2.10.jar:2.2.3]
-	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70) [netty.jar:na]
-	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564) [netty.jar:na]
-	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791) [netty.jar:na]
-	at com.typesafe.netty.http.pipelining.HttpPipeliningHandler.messageReceived(HttpPipeliningHandler.java:62) [netty-http-pipelining.jar:na]
-	at org.jboss.netty.channel.SimpleChannelHandler.handleUpstream(SimpleChannelHandler.java:88) [netty.jar:na]
-	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564) [netty.jar:na]
-	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791) [netty.jar:na]
-	at org.jboss.netty.handler.codec.http.HttpContentDecoder.messageReceived(HttpContentDecoder.java:108) [netty.jar:na]
-	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70) [netty.jar:na]
-	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564) [netty.jar:na]
-	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791) [netty.jar:na]
-	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:296) [netty.jar:na]
-	at org.jboss.netty.handler.codec.frame.FrameDecoder.unfoldAndFireMessageReceived(FrameDecoder.java:459) [netty.jar:na]
-	at org.jboss.netty.handler.codec.replay.ReplayingDecoder.callDecode(ReplayingDecoder.java:536) [netty.jar:na]
-	at org.jboss.netty.handler.codec.replay.ReplayingDecoder.messageReceived(ReplayingDecoder.java:435) [netty.jar:na]
-	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70) [netty.jar:na]
-	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564) [netty.jar:na]
-	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:559) [netty.jar:na]
-	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:268) [netty.jar:na]
-	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:255) [netty.jar:na]
-	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:88) [netty.jar:na]
-	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:109) [netty.jar:na]
-	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:312) [netty.jar:na]
-	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:90) [netty.jar:na]
-	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178) [netty.jar:na]
-	at org.jboss.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108) [netty.jar:na]
-	at org.jboss.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42) [netty.jar:na]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145) [na:1.7.0_51]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615) [na:1.7.0_51]
-	at java.lang.Thread.run(Thread.java:744) [na:1.7.0_51]
-
-2014-05-24 22:33:30,108 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in New I/O worker #1 
-update play_evolutions set state = 'applied' where state = 'applying_up' and id = 1
-
-2014-05-24 22:33:30,109 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in New I/O worker #1 
-delete from play_evolutions where state = 'applying_down' and id = 1
-
-2014-05-24 22:33:30,148 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in New I/O worker #1 
-select id, hash, apply_script, revert_script, state, last_problem from play_evolutions where state like 'applying_%'
-
-2014-05-24 22:33:30,148 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in New I/O worker #1 
-
-            select id, hash, apply_script, revert_script from play_evolutions order by id
-        
-
-2014-05-24 22:33:30,151 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in New I/O worker #1 
-select id, hash, apply_script, revert_script, state, last_problem from play_evolutions where state like 'applying_%'
-
-2014-05-24 22:33:30,151 - [DEBUG] - from com.jolbox.bonecp.PreparedStatementHandle in New I/O worker #1 
-insert into play_evolutions values(2, '4a11e9f964263641bdc336671f8c31c0781a1f5a', 2014-05-24, 'Insert into login (ID, ProfName, Password) values (1,'bruegge', 'test1');
-Insert into login (ID, ProfName, Password) values (2,'jacobson', 'test2');', 'delete from login;', 'applying_up', '')
-
-2014-05-24 22:33:30,152 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in New I/O worker #1 
-Insert into login (ID, ProfName, Password) values (1,'bruegge', 'test1')
-
-2014-05-24 22:33:30,152 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in New I/O worker #1 
-Insert into login (ID, ProfName, Password) values (2,'jacobson', 'test2')
-
-2014-05-24 22:33:30,152 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in New I/O worker #1 
-update play_evolutions set state = 'applied' where id = 2
-
-2014-05-24 22:33:30,153 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in New I/O worker #1 
-select id, hash, apply_script, revert_script, state, last_problem from play_evolutions where state like 'applying_%'
-
-2014-05-24 22:33:30,515 - [INFO] - from com.jolbox.bonecp.BoneCP in play-internal-execution-context-1 
-Shutting down connection pool...
-
-2014-05-24 22:33:30,516 - [DEBUG] - from com.jolbox.bonecp.PoolWatchThread in BoneCP-pool-watch-thread 
-Terminating pool watch thread
-
-2014-05-24 22:33:30,980 - [INFO] - from com.jolbox.bonecp.BoneCP in play-internal-execution-context-1 
-Connection pool has been shutdown.
-
-2014-05-24 22:33:30,980 - [DEBUG] - from com.jolbox.bonecp.BoneCPDataSource in play-internal-execution-context-1 
-Connection pool has been shut down
-
-2014-05-24 22:33:31,197 - [INFO] - from play in play-internal-execution-context-1 
-datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
-
-2014-05-24 22:33:31,197 - [DEBUG] - from com.jolbox.bonecp.BoneCPDataSource in play-internal-execution-context-1 
-JDBC URL = jdbc:h2:mem:play;DB_CLOSE_DELAY=-1, Username = null, partitions = 1, max (per partition) = 30, min (per partition) = 5, idle max age = 10 min, idle test period = 1 min, strategy = DEFAULT
-
-2014-05-24 22:33:31,197 - [WARN] - from com.jolbox.bonecp.BoneCPConfig in play-internal-execution-context-1 
-JDBC username was not set in config!
-
-2014-05-24 22:33:31,197 - [WARN] - from com.jolbox.bonecp.BoneCPConfig in play-internal-execution-context-1 
-JDBC password was not set in config!
-
-2014-05-24 22:33:31,199 - [INFO] - from play in play-internal-execution-context-1 
-database [default] connected at jdbc:h2:mem:play
-
-2014-05-24 22:33:31,204 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in play-internal-execution-context-1 
-select id, hash, apply_script, revert_script, state, last_problem from play_evolutions where state like 'applying_%'
-
-2014-05-24 22:33:31,205 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in play-internal-execution-context-1 
-
-            select id, hash, apply_script, revert_script from play_evolutions order by id
-        
-
-2014-05-24 22:33:31,515 - [INFO] - from play in play-internal-execution-context-1 
-Application started (Dev)
-
-2014-05-24 22:33:32,246 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in play-akka.actor.default-dispatcher-5 
-SELECT ID, ProfName, Password FROM login
-
-2014-05-25 00:05:11,753 - [INFO] - from com.jolbox.bonecp.BoneCP in pool-4-thread-2 
-Shutting down connection pool...
-
-2014-05-25 00:05:11,812 - [DEBUG] - from com.jolbox.bonecp.PoolWatchThread in BoneCP-pool-watch-thread 
-Terminating pool watch thread
+2014-05-29 17:16:08,009 - [WARN] - from play in New I/O worker #1 
+No application found at invoker init
+
+2014-05-29 17:16:54,505 - [ERROR] - from application in New I/O worker #1 
+
+
+! @6icb8h73m - Internal server error, for (GET) [/] ->
+
+play.PlayExceptions$CompilationException: Compilation error[error: method render in class index cannot be applied to given types;]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:298) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:298) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:296) ~[na:na]
+	at scala.util.Either$LeftProjection.map(Either.scala:377) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1.reload(PlayReloader.scala:296) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:104) ~[play_2.10.jar:2.2.3]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:102) ~[play_2.10.jar:2.2.3]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
 
